@@ -10,9 +10,11 @@ test('Work with muliple pages in same context', async({context})=>{
     const title1=await page1.title();
     const title2=await page2.title();
 
-    console.log('Page 1 Title: '+ title1);
-    console.log('Page 2 Title: '+ title2);
-
+    for (const page of context.pages()) 
+    {
+        console.log(await page.title());
+    }
+    console.log('Total Pages:', context.pages().length);
     //assertions
     expect(title1.length).toBeGreaterThan(0);
     expect(title2.length).toBeGreaterThan(0);
