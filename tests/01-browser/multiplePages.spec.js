@@ -1,6 +1,6 @@
-const {test, expect} = require('@playwright/test');
+const {test, browser, expect} = require('@playwright/test');
 
-test('Work with muliple pages in same context', async({'context'})=>{
+test('Work with muliple pages in same context', async({context})=>{
     const page1 = await context.newPage();
     await page1.goto('https://playwright.dev');
     
