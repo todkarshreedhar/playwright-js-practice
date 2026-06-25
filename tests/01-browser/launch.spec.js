@@ -1,10 +1,11 @@
 const {test, expect} = require('@playwright/test');
 
-test('Launch browser and verify title', async({page})=>{
+test('Browser Information', async({page, browserName})=>{
     await page.goto('https://playwright.dev/');
-    const title = await page.title();
-    console.log(`Page Title : ${title}`);
+    console.log('Browser :', browserName);
+    console.log('Title   :', await page.title());
+    console.log('URL     :', page.url());
 })
 
 //npx playwright test tests/01-browser/launch.spec.js // Run headless
-//npx playwright test tests/01-browser/launch.spec.js -- headed
+//npx playwright test tests/01-browser/launch.spec.js --headed
