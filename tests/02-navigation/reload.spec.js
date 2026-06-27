@@ -14,10 +14,9 @@ test('Reload the current page',async({page})=>{
     //
     //3
     const response = await page.reload();
-
-console.log(response.status());
-console.log(response.ok());
-console.log(response.url());
+    console.log(response.status());
+    console.log(response.ok());
+    console.log(response.url());
     console.log('After Reload:');
     console.log(`Title:${await page.title()}`);
 });
