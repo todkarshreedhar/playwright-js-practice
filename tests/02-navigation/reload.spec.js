@@ -20,6 +20,18 @@ test('Reload the current page',async({page})=>{
     console.log('After Reload:');
     console.log(`Title:${await page.title()}`);
 });
+
+test('Reload page multiple times', async({page})=>{
+    await page.goto('https://playwright.dev');
+    for(let i=0;i<=3;i++)
+    {
+        console.log(`Reload #${i}`);
+        await page.reload();
+    }
+    await expect(page).toHaveTitle(/Playwright/);
+    
+});
+
 //Note:Any DOM element handles you saved before the reload will become invalid ("stale") after the reload. 
 
 //npx playwright test tests/02-navigation/reload.spec.js --headed
