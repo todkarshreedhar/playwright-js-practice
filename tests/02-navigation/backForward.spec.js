@@ -9,6 +9,10 @@ test('Navigate back and forward in browser history', async({page})=>{
     console.log('Current URL:', page.url());
     // Go Back
     await page.goBack();
+    //await page.goBack({
+    //   waitUntil: 'networkidle', // 'load', 'domcontentloaded', 'networkidle', or 'commit'
+    //   timeout: 15000            // Time in milliseconds before throwing an error
+    // });
     console.log('After back URL:', page.url());
     await expect(page).toHaveURL('https://playwright.dev');
     // Go Forward
