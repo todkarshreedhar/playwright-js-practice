@@ -20,3 +20,17 @@ test('Navigate back and forward in browser history', async({page})=>{
     console.log('After forward URL:', page.url());
     await expect(page).toHaveURL('https://example.com');
 });
+
+test('Navigate through three pages', async ({ page }) => {
+
+    await page.goto('https://playwright.dev');
+    await page.goto('https://example.com');
+    await page.goto('https://www.wikipedia.org');
+
+    await page.goBack();
+    await page.goBack();
+    await page.goForward();
+
+    console.log(await page.title());
+
+});
