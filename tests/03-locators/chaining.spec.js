@@ -68,7 +68,6 @@ test('Chain locator()', async({page}) =>{
 
 
 // Q1. What is locator chaining?
-
 // It is the process of narrowing the search scope step by step by combining multiple locator methods.
 
 // Q2. Why is chaining better than a long XPath?
@@ -76,8 +75,9 @@ test('Chain locator()', async({page}) =>{
 // Easier to debug.
 // Less fragile.
 // More maintainable.
-// Q3. Can different locator strategies be combined?
 
+
+// Q3. Can different locator strategies be combined?
 // Yes. For example:
 
 // page
